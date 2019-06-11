@@ -34,15 +34,13 @@ module mpifx_gatherv_module
   !!       real, allocatable :: send1(:)
   !!       real, allocatable :: recv1(:)
   !!       integer, allocatable :: recvcounts(:)
-  !!       integer :: ii, nrecv  
-  !!       character(100) :: formstr
-  !!       character(*), parameter :: label = "(I2.2,'-',I3.3,'|',1X"
-  !!     
+  !!       integer :: ii, nrecv
+  !!
   !!       call mpifx_init()
   !!       call mycomm%init()
   !!     
   !!       ! I1 -> I1
-  !!       allocate(send1(mycomm%rank+1)) 
+  !!       allocate(send1(mycomm%rank+1))
   !!       send1 = 1.0*mycomm%rank
   !!       if (mycomm%master) then
   !!         ! recv1 size is 1+2+3+...+mycomm%size 
@@ -50,6 +48,8 @@ module mpifx_gatherv_module
   !!         allocate(recv1(nrecv))
   !!         recv1(:) = 0
   !!         allocate(recvcounts(mycomm%size))
+  !!
+  !!
   !!         do ii = 1, mycomm%size  
   !!           recvcounts(ii) = ii 
   !!         end do 
