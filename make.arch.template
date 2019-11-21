@@ -5,8 +5,8 @@
 # Fortran 2003 compiler
 FXX = mpif90
 
-# Fortran compiler options
-FXXOPT = -assume realloc_lhs -stand f03 -warn
+# Fortran compiler otions
+FXXOPT = 
 
 # Linker
 LN = $(FXX)
@@ -15,7 +15,10 @@ LN = $(FXX)
 LNOPT = 
 
 # M4 interpreter
-M4 = m4
+FYPP = fypp
 
-# M4 interpreter options (e.g. -DDEBUG for debug mode)
-M4OPT = ""
+# M4 interpreter options
+FYPPOPT = ""
+
+# Where to build the library (ROOT = root of the source distribution)
+BUILDDIR = $(ROOT)/_build
